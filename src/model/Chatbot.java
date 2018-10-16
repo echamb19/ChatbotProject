@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+
 public class Chatbot 
 {
 	private String askName;
@@ -67,6 +68,12 @@ public class Chatbot
 		spookyList.add("I am the 'who' when you call 'Who's there?'.");
 	}
 	
+	public String processText(String userText)
+	{
+		String answer = "";
+		answer += "You said: " + userText;
+		return answer;
+	}
 	
 	public String getWhatWasThat()
 	{
