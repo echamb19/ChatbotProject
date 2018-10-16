@@ -33,8 +33,4 @@ public class BotController
 	
 	
 	
-	ArrayList<String> responseList = new ArrayList<String>();
-	
-	ArrayList<String> spookyList = new ArrayList<String>(); 
-	
 }
