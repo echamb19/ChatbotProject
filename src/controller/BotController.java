@@ -14,6 +14,24 @@ public class BotController
 		{
 			userInput = JOptionPane.showInputDialog (null, "If you want me to stop, type 'quit'.");
 		}
+		
+		interactWithChatbot();
+	} 
+	
+	public String interactWithChatbot(String text)
+	{
+		String output = "";
+		String userResponse = JOptionPane.showInputDialog(null, "Hi. What's up?");
+		
+		return output;
+	}
+	
+	public String processText(String userText)
+	{
+		String answer = "";
+		answer += "You said: " + userText;
+		output = simpleBot.processText(userResponse);
+		return answer;
 	}
 	
 	ArrayList<String> responseList = new ArrayList<String>();
