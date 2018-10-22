@@ -1,17 +1,18 @@
-package controller;
+package chat.controller;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import model.Chatbot;
 
-public class BotController
+import chat.model.Chatbot;
+
+public class ChatController
 {
 
 	private Chatbot simpleBot;
 	
-	public BotController()
+	public ChatController()
 	{
-		
+		simpleBot = new Chatbot();
 	}
 	
 	public void start()
@@ -31,6 +32,9 @@ public class BotController
 		return output;
 	}
 	
-	
+	public Chatbot getChatbot()
+	{
+		return simpleBot; 
+	}
 	
 }
