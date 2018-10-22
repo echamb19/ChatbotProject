@@ -9,11 +9,12 @@ public class Chatbot
 	private String hello; 
 	private String howAreYou;
 	private String niceToMeetYou;
-	private String userName;
+	private String currentUser;
 	private String good;
 	private String bad;
 	private String whatWasThat; 
 	private String joke;
+	private String content;
 	
 	private ArrayList<String> responseList;
 	private ArrayList<String> spookyList; 
@@ -29,6 +30,8 @@ public class Chatbot
 		this.bad = "That sucks. :( "; 
 		this.whatWasThat = "I'm sorry, what did you say?"; 
 		this.joke = "What did the baby robot call it's father? ... Data.";
+		this.content = "Books.";
+		this.currentUser = "Friend.";
 	
 		this.responseList = new ArrayList<String>();
 		this.spookyList = new ArrayList<String>();
@@ -37,35 +40,44 @@ public class Chatbot
 		
 	}
 	
-	public Chatbot(String askName, String catResponse,String whatWasThat, String hello, String howAreYou, String niceToMeetYou, String userName, String good, String bad)
+	public Chatbot(String askName, String catResponse, String content, String whatWasThat, String hello, String howAreYou, String niceToMeetYou, String currentUser, String good, String bad)
 	{
 		this.askName = askName; 
 		this.catResponse = catResponse; 
 		this.hello = hello; 
 		this.niceToMeetYou = niceToMeetYou; 
 		this.howAreYou = howAreYou;
-		this.userName = userName;
+		this.currentUser = currentUser;
 		this.good = good;
 		this.bad = bad;
 		this.whatWasThat = whatWasThat; 
 		this.joke = joke;
+		this.content = content;
 		
 	
 	}
 	
 	private void buildTheLists()
 	{
-		responseList.add("Hello! How re you?");
+		responseList.add("Hello!");
+		responseList.add("How are you today?");
 		responseList.add("Goodbye - no more talking!");
 		responseList.add("That's not very nice.");
 		responseList.add("Thank you.");
 		responseList.add("You're welcome. :)");
 		responseList.add("Who's there?"); 
+		responseList.add("");
 		
+		spookyList.add("This is Halloween! Pumpkins scream in the dead of night.");
+		spookyList.add("Boys and girls of every age, wouldn't you like to see something strange?");
+		spookyList.add("Come with us and you will see, this our town of Halloween.");
 		spookyList.add("I am the one hiding under your bed, teeth grown sharp and eyes glowing red."); 
 		spookyList.add("I am the one hiding under your stairs, fingers like snakes and spiders in my hair.");
 		spookyList.add("I am the shadow on the moon at night, filling your dreams to the brim with fright.");
-		spookyList.add("I am the 'who' when you call 'Who's there?'.");
+		spookyList.add("I am the clown with the tearaway face, here in a flash and gone without a trace.");
+		spookyList.add("I am the 'who' when you call 'Who's there?'."); 
+		spookyList.add("Boo!"); 
+		
 	}
 	
 	public String processText(String userText)
@@ -103,10 +115,6 @@ public class Chatbot
 	{
 		return niceToMeetYou;
 	}
-	public String getUserName()
-	{
-		return userName;
-	}
 	public String getGood()
 	{
 		return good;
@@ -115,10 +123,26 @@ public class Chatbot
 	{
 		return bad;
 	}
-	
-	public void setUserName(String userName)
+	public ArrayList<String> getSpookyList()
 	{
-		this.userName = userName;
+		return spookyList;
+	}
+	public String getContent()
+	{
+		return content;
+	}
+	public ArrayList<String> getResponseList()
+	{
+		return responseList;
+	}
+	public String getCurrentUser()
+	{
+		return currentUser;
+	}
+	
+	public void setCurrentUser(String currentUser)
+	{
+		this.currentUser = currentUser;
 	}
 	
 	
