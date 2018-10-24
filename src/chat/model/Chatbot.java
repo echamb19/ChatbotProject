@@ -91,8 +91,12 @@ public class Chatbot
 		responseList.add("What was that?");
 		responseList.add("Have a great day! :D");
 		responseList.add("I wish you luck in life. :)");
-		responseList.add("");
-
+		responseList.add("What is your favorite color?");
+		responseList.add("Do you have a favorite number? If so, what is it?");
+		responseList.add("That's cool. :)");
+		responseList.add("Why?"); 
+		responseList.add("What would you do with a million dollars?"); 
+		responseList.add("Why not?"); 
 		
 		spookyList.add("This is Halloween! Pumpkins scream in the dead of night.");
 		spookyList.add("Boys and girls of every age, wouldn't you like to see something strange?");
