@@ -15,9 +15,11 @@ public class Chatbot
 	private String whatWasThat; 
 	private String joke;
 	private String content;
+	private boolean legit = true;
 	
 	private ArrayList<String> responseList;
 	private ArrayList<String> spookyList; 
+
 	
 	public Chatbot()
 	{
@@ -38,6 +40,26 @@ public class Chatbot
 		
 		buildTheLists();
 		
+	}
+	
+	public boolean legitimacyChecker (String input)
+	{
+		boolean isValid = true;
+		
+		if(input == null)
+		{
+			isValid = false;
+		}
+		else if (input.length() < 2) 
+		{
+			isValid = false;
+		}
+		else if (input.contains("sdf") || input.contains ("jkl"))
+		{
+			isValid = false;
+		}
+		
+		return isValid;
 	}
 	
 	public Chatbot(String askName, String catResponse, String content, String whatWasThat, String hello, String howAreYou, String niceToMeetYou, String currentUser, String good, String bad)
@@ -66,7 +88,11 @@ public class Chatbot
 		responseList.add("Thank you.");
 		responseList.add("You're welcome. :)");
 		responseList.add("Who's there?"); 
+		responseList.add("What was that?");
+		responseList.add("Have a great day! :D");
+		responseList.add("I wish you luck in life. :)");
 		responseList.add("");
+
 		
 		spookyList.add("This is Halloween! Pumpkins scream in the dead of night.");
 		spookyList.add("Boys and girls of every age, wouldn't you like to see something strange?");
