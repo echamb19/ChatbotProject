@@ -1,6 +1,7 @@
 package chat.model;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Chatbot 
 {
@@ -32,7 +33,7 @@ public class Chatbot
 		this.bad = "That sucks. :( "; 
 		this.whatWasThat = "I'm sorry, what did you say?"; 
 		this.joke = "What did the baby robot call it's father? ... Data.";
-		this.content = "Books.";
+		this.content = "Books";
 		this.currentUser = "Friend.";
 	
 		this.responseList = new ArrayList<String>();
@@ -62,6 +63,48 @@ public class Chatbot
 		return isValid;
 	}
 	
+	public boolean spookyChecker (String input)
+	{
+		boolean isValid = true;
+		
+		if(input.contains("Easter"))
+		{
+			isValid = false;
+		}
+		
+		return isValid;
+	}
+	
+	/*public boolean contentChecker (String input)
+	{
+		boolean isValid = true; 
+		
+		if (input.contains(content))
+		{
+			JOptionPane.showMessageDialog(null, "You found my secret word! :D");
+		}
+		
+		else if (input.contains("Text" + content + "Text"))
+		{
+			
+		}
+		return isValid; 
+	}*/
+	
+	public boolean testChatbotString (String input)
+	{
+		boolean isValid = true; 
+		
+		return isValid;
+	}
+	
+	public Chatbot(String input)
+	{
+		input = "Fun.";
+		
+	}
+	
+	
 	public Chatbot(String askName, String catResponse, String content, String whatWasThat, String hello, String howAreYou, String niceToMeetYou, String currentUser, String good, String bad)
 	{
 		this.askName = askName; 
@@ -78,7 +121,7 @@ public class Chatbot
 		
 	
 	}
-	
+
 	private void buildTheLists()
 	{
 		responseList.add("Hello!");
@@ -112,8 +155,8 @@ public class Chatbot
 	
 	public String processText(String userText)
 	{
-		String answer = "";
-		answer += "You said: " + userText;
+		String answer = "You said: ";
+		answer += "Chatbot says: " + userText;
 		return answer;
 	}
 	
