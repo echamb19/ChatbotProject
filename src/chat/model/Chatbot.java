@@ -67,15 +67,18 @@ public class Chatbot
 	{
 		boolean isValid = true;
 		
-		if(input.contains("Easter"))
+		for (String spookyString: spookyList)
 		{
-			isValid = false;
+			if(input.contains("Easter"))
+			{
+				isValid = false;
+			}
 		}
 		
 		return isValid;
 	}
 	
-	/*public boolean contentChecker (String input)
+	public boolean contentChecker (String input)
 	{
 		boolean isValid = true; 
 		
@@ -89,11 +92,16 @@ public class Chatbot
 			
 		}
 		return isValid; 
-	}*/
+	}
 	
-	public boolean testChatbotString (String input)
-	{
-		boolean isValid = true; 
+	public boolean testChatbotString (String content)
+	{		
+		boolean isValid = false;
+		
+		if (content == "Books.")
+		{
+			isValid = true; 
+		}
 		
 		return isValid;
 	}
@@ -155,7 +163,7 @@ public class Chatbot
 	
 	public String processText(String userText)
 	{
-		String answer = "You said: ";
+		String answer = "You said: " + userText;
 		answer += "Chatbot says: " + userText;
 		return answer;
 	}
