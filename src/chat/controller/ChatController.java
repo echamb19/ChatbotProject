@@ -55,4 +55,13 @@ public class ChatController
 		return simpleBot; 
 	}
 	
+	public boolean interactWithChatbot ()
+	{
+		boolean isValid = false;
+		
+		
+		
+		return isValid;
+	}
+	
 }

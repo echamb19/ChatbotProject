@@ -78,19 +78,40 @@ public class Chatbot
 		return isValid;
 	}
 	
-	public boolean contentChecker (String input)
+	public boolean contentChecker (String userText)
 	{
-		boolean isValid = true; 
+		boolean isValid = false; 
 		
-		if (input.contains(content))
+		if (userText.equalsIgnoreCase(content))
 		{
 			JOptionPane.showMessageDialog(null, "You found my secret word! :D");
+			isValid = true;
 		}
 		
-		else if (input.contains("Text" + content + "Text"))
+		else if (userText.contains(" " + content + " "))
 		{
-			
+			JOptionPane.showMessageDialog(null, "You found my secret word! :D");
+			isValid = true; 
 		}
+		
+		else if (userText.contains(" " + content + "."))
+		{
+			JOptionPane.showMessageDialog(null, "You found my secret word! :)");
+			isValid = true;
+		}
+		
+		else if (0 == userText.indexOf(content + " "))
+		{
+			isValid = false;
+		}
+		
+		else if (userText.length() - content.length() == content.indexOf(content))
+		{
+			isValid = false;
+		}
+		
+		//else if ()
+		
 		return isValid; 
 	}
 	
@@ -106,9 +127,9 @@ public class Chatbot
 		return isValid;
 	}
 	
-	public Chatbot(String input)
+	public Chatbot(String string)
 	{
-		input = "Fun.";
+		content = "sample content";
 		
 	}
 	
@@ -141,7 +162,7 @@ public class Chatbot
 		responseList.add("Who's there?"); 
 		responseList.add("What was that?");
 		responseList.add("Have a great day! :D");
-		responseList.add("I wish you luck in life. :)");
+		responseList.add(askName);
 		responseList.add("What is your favorite color?");
 		responseList.add("Do you have a favorite number? If so, what is it?");
 		responseList.add("That's cool. :)");
@@ -152,7 +173,7 @@ public class Chatbot
 		spookyList.add("This is Halloween! Pumpkins scream in the dead of night.");
 		spookyList.add("Boys and girls of every age, wouldn't you like to see something strange?");
 		spookyList.add("Come with us and you will see, this our town of Halloween.");
-		spookyList.add("I am the one hiding under your bed, teeth grown sharp and eyes glowing red."); 
+		spookyList.add("I am the one hiding under your bed, teeth ground sharp and eyes glowing red."); 
 		spookyList.add("I am the one hiding under your stairs, fingers like snakes and spiders in my hair.");
 		spookyList.add("I am the shadow on the moon at night, filling your dreams to the brim with fright.");
 		spookyList.add("I am the clown with the tearaway face, here in a flash and gone without a trace.");
@@ -163,8 +184,14 @@ public class Chatbot
 	
 	public String processText(String userText)
 	{
-		String answer = "You said: " + userText;
-		answer += "Chatbot says: " + userText;
+		String answer = " ";
+		answer += "You said: " + userText + "Chatbot says: " + userText;
+		
+		if (userText != null && userText.contains(content))
+			{
+			answer = answer + " You said the special words";
+			}
+		
 		return answer;
 	}
 	
