@@ -30,24 +30,31 @@ public class ChatController
 		}
 	} 
 	
-/*	public String interactWithChatbot(String text)
+	public String interactWithChatbot(String text)
 	{
 		String output = "";
 		String userResponse = JOptionPane.showInputDialog (null, "If you want me to stop, type 'quit'.");
 		output = simpleBot.processText(userResponse);
-		return output;
-	}*/
-	
-	public boolean useChatbotCheckers (String input)
-	{
-		boolean isValid = true; 
 		
-		if (input.contains("Halloween")) 
+		if(text == (null))
 		{
-			isValid = false;
+			output += ("Don't input null! :(");
 		}
 		
-		return isValid;
+		return output;
+	} 
+	
+	public String useChatbotCheckers (String input)
+	{
+		boolean isTrue = true; 
+		
+		if (input == (null)) 
+		{
+			//String output += ("Don't input null! :(");
+			isTrue = false;
+		}
+		
+		return isTrue;
 	}
 	
 	public Chatbot getChatbot()
