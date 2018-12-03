@@ -44,7 +44,7 @@ public class ChatController
 		return output;
 	} 
 	
-	public String useChatbotCheckers (String input)
+	public boolean useChatbotCheckers (String input)
 	{
 		boolean isTrue = true; 
 		
