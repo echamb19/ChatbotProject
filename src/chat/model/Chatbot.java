@@ -186,6 +186,23 @@ public class Chatbot
 	{
 		String answer = " ";
 		
+		if(!legitimacyChecker(userText))
+		{
+			answer += "You said: null. You really should not send null.\n";
+		}
+		else
+		{
+			answer += "You said: " + userText + "\n";
+			
+			if (contentChecker(userText))
+			{
+				answer += "You said the special words! \n";
+			}
+			int randomIndex = (int) (responseList.size() * Math.random()); 
+			answer += "Chatbot says: " + responseList.get(randomIndex) + "\n";
+		}
+		
+		/* This was here, but I made it better thanks to Henrichsen. 
 		int randomIndex = (int)(Math.random() * responseList.size());
 		
 		answer += "You said: " + userText + "Chatbot says: " + randomIndex;
@@ -194,6 +211,7 @@ public class Chatbot
 			{
 			answer = answer + " You said the special words";
 			}
+		*/
 		
 		return answer;
 	}

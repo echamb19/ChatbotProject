@@ -17,7 +17,7 @@ public class ChatController
 	
 	public void start()
 	{
-		String userInput = "";
+		/*String userInput = "";
 		while(!userInput.equalsIgnoreCase("quit"))
 		{
 			userInput = JOptionPane.showInputDialog(null, "If you want me to stop, type 'quit'.");
@@ -27,24 +27,23 @@ public class ChatController
 		if(userInput.equals (null))
 		{
 			JOptionPane.showMessageDialog(null, "You must enter something.");
-		}
+		}*/
 	} 
 	
 	public String interactWithChatbot(String text)
 	{
 		String output = "";
-		String userResponse = JOptionPane.showInputDialog (null, "If you want me to stop, type 'quit'.");
-		output = simpleBot.processText(userResponse);
-		
+		//String userResponse = JOptionPane.showInputDialog (null, "If you want me to stop, type 'quit'.");
+		//output = simpleBot.processText(userResponse);
 		if(text == (null))
 		{
 			output += ("Don't input null! :(");
 		}
-		
+		output+= simpleBot.processText(text);
 		return output;
 	} 
 	
-	public boolean useChatbotCheckers (String input)
+	public boolean useChatbotCheckers (boolean isVallid, String input)
 	{
 		boolean isTrue = true; 
 		
