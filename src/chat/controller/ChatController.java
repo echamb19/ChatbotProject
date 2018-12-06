@@ -2,16 +2,18 @@ package chat.controller;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import chat.view.ChatFrame;
 
 import chat.model.Chatbot;
 
 public class ChatController
 {
-
+	private ChatFrame chatFrame;
 	private Chatbot simpleBot;
-	
+
 	public ChatController()
 	{
+		chatFrame = new ChatFrame(this);
 		simpleBot = new Chatbot();
 	}
 	
@@ -35,39 +37,35 @@ public class ChatController
 		String output = "";
 		//String userResponse = JOptionPane.showInputDialog (null, "If you want me to stop, type 'quit'.");
 		//output = simpleBot.processText(userResponse);
-		if(text == (null))
+		/*if(text == (null))
 		{
 			output += ("Don't input null! :(");
-		}
+		}*/
 		output+= simpleBot.processText(text);
 		return output;
 	} 
 	
-	public boolean useChatbotCheckers (boolean isVallid, String input)
+	public String useChatbotCheckers (String text)
 	{
-		boolean isTrue = true; 
-		
-		if (input == (null)) 
+		String testedValues = "The following chechers passed:";
+		if (simpleBot.contentChecker(text))
 		{
-			//String output += ("Don't input null! :(");
-			isTrue = false;
+			testedValues += "\nContent Checker";
 		}
-		
-		return isTrue;
+		if(simpleBot.spookyChecker(text))
+		{
+			testedValues += "\nSpooky Checker Happy Halloween";
+		}
+		if (simpleBot.legitimacyChecker(text))
+		{
+			testedValues += "\nValidity Checker";
+		}
+		return testedValues;
 	}
 	
 	public Chatbot getChatbot()
 	{
 		return simpleBot; 
-	}
-	
-	public boolean interactWithChatbot ()
-	{
-		boolean isValid = false;
-		
-		
-		
-		return isValid;
 	}
 	
 }

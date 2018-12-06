@@ -198,9 +198,11 @@ public class Chatbot
 			{
 				answer += "You said the special words! \n";
 			}
-			int randomIndex = (int) (responseList.size() * Math.random()); 
-			answer += "Chatbot says: " + responseList.get(randomIndex) + "\n";
+		int randomIndex = (int) (responseList.size() * Math.random()); 
+		answer += "Chatbot says: " + responseList.get(randomIndex) + "\n";
 		}
+		
+		return answer;
 		
 		/* This was here, but I made it better thanks to Henrichsen. 
 		int randomIndex = (int)(Math.random() * responseList.size());
@@ -212,8 +214,7 @@ public class Chatbot
 			answer = answer + " You said the special words";
 			}
 		*/
-		
-		return answer;
+	
 	}
 	
 	public String getWhatWasThat()
