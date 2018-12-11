@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent; 
 import java.awt.Color; 
 import java.awt.Font;
+import chat.controller.IOController;
 
 public class ChatPanel extends JPanel
 {
@@ -102,7 +103,10 @@ public class ChatPanel extends JPanel
 		{
 				public void actionPerformed(ActionEvent click)
 				{
-					
+					String chatText = chatArea.getText(); 
+					String path = "."; 
+					IOController.saveText(chatController, path, chatText); 
+					chatArea.setText("Chat saved!");
 				}
 		});
 		

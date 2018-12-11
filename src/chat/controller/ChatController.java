@@ -83,8 +83,4 @@ public class ChatController
 		return chatFrame;
 	}
 	
-	public Chatbot getChatbot()
-	{
-		return simpleBot;
-	}
 }
