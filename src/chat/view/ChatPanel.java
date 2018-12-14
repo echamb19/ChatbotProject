@@ -104,7 +104,7 @@ public class ChatPanel extends JPanel
 				public void actionPerformed(ActionEvent click)
 				{
 					String chatText = chatArea.getText(); 
-					String path = "."; 
+					String path = getPath("save");
 					IOController.saveText(chatController, path, chatText); 
 					chatArea.setText("Chat saved!");
 				}
@@ -132,7 +132,7 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				chatArea.setText("Hello. :)");
 			}
 		});
 		

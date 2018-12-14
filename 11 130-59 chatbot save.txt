@@ -1,0 +1,9 @@
+Chat Area You said: Talk to the bot here. I did a thing. 
+Chatbot says: Hello!
+ You said: Hello. :)
+Chatbot says: What is your name?
+ You said: null. You really should not send null.
+ You said: I didn't send null, I sent 'V' because that's my nickname. :)
+Chatbot says: Goodbye - no more talking!
+ You said: Well, fine then. 
+Chatbot says: Why?
