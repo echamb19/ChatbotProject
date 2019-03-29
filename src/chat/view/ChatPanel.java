@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent; 
 import java.awt.Color; 
 import java.awt.Font;
-import chat.controller.IOController;
+import chat.controller.ChatIOController;
 
 public class ChatPanel extends JPanel
 {
@@ -82,7 +82,7 @@ public class ChatPanel extends JPanel
 				{
 					String chatText = chatArea.getText(); 
 					String path = getPath("save");
-					IOController.saveText(chatController, path, chatText); 
+					ChatIOController.saveText(chatController, path, chatText); 
 					chatArea.setText("Chat saved!");
 				}
 		});
@@ -92,7 +92,7 @@ public class ChatPanel extends JPanel
 				public void actionPerformed(ActionEvent click)
 				{
 					String path = getPath("load");
-					String chatText = IOController.loadFile(chatController, path);
+					String chatText = ChatIOController.loadFile(chatController, path);
 					chatArea.setText(chatText);
 				}
 		});

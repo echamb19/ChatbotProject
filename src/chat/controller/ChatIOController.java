@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.File; 
 import java.io.PrintWriter; //How to write things to the file [Works like systemOut.println]
 
-public class IOController
+public class ChatIOController
 {
 	public static void saveText(ChatController app, String path, String textToSave)
 	{
