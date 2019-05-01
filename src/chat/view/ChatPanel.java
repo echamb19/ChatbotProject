@@ -22,6 +22,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea; 
 	private JScrollPane chatPane; 
 	private JButton resetButton; 
+	private JButton twitterButton; 
 	
 	public ChatPanel(ChatController chatController)
 	{
@@ -38,6 +39,7 @@ public class ChatPanel extends JPanel
 		this.chatArea = new JTextArea("Chat Area", 20, 50); 
 		this.chatPane = new JScrollPane();
 		this.checkerButton = new JButton("Check Text");		
+		this.twitterButton = new JButton("Tweet");	
 		
 		//this.responseLabel = new JLabel("Hello, I am your friendly neighborhood Chatbot."); 
 		
@@ -59,6 +61,7 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton); 
 		this.add(chatField); 
 		this.add(resetButton);
+		this.add(twitterButton); 
 	}
 	
 	private void setupListeners()
@@ -113,6 +116,14 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
+		twitterButton.addActionListener(new ActionListener()
+		{		
+			public void actionPerformed(ActionEvent tweetClick)
+			{
+				String textToTweet = chatField.getText().trim();
+				chatController.tweet(textToTweet);
+			}
+		});
 	}
 	
 	private String getPath(String choice)

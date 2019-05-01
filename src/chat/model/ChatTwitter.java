@@ -1,7 +1,7 @@
 package chat.model;
 
 import chat.controller.ChatController;
-//import twitter4j.*;
+import twitter4j.*;
 import chat.controller.ChatIOController;
 import java.util.*;
 import java.text.DecimalFormat;
@@ -107,7 +107,7 @@ public class ChatTwitter
 		String fileText = ChatIOController.loadFile(app, "commonWords.txt");
 		int wordCount = 0;
 		
-		Scanner wordScanner = new Scanner(fileText);
+		Scanner wordScanner = new Scanner(this.getClass().getResourceAsStream("data/commonWords.txt"));
 		
 		while(wordScanner.hasNextLine())
 		{
