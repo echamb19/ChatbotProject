@@ -23,6 +23,7 @@ public class ChatPanel extends JPanel
 	private JScrollPane chatPane; 
 	private JButton resetButton; 
 	private JButton twitterButton; 
+	private JButton searchTwitterButton; 
 	
 	public ChatPanel(ChatController chatController)
 	{
@@ -40,6 +41,7 @@ public class ChatPanel extends JPanel
 		this.chatPane = new JScrollPane();
 		this.checkerButton = new JButton("Check Text");		
 		this.twitterButton = new JButton("Tweet");	
+		this.searchTwitterButton = new JButton("Search Twitter");
 		
 		//this.responseLabel = new JLabel("Hello, I am your friendly neighborhood Chatbot."); 
 		
@@ -122,6 +124,16 @@ public class ChatPanel extends JPanel
 			{
 				String textToTweet = chatField.getText().trim();
 				chatController.tweet(textToTweet);
+			}
+		});
+		
+		searchTwitterButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent searchClick)
+			{
+				String username = chatField.getText().trim(); 
+				String display = chatController.findWords(username); 
+				chatArea.append("\n\n" + display); 
 			}
 		});
 	}

@@ -101,6 +101,17 @@ public class ChatTwitter
 		return scrubbedString;
 	}
 	
+	private void removeBlanks()
+	{
+		for(int index = tweetedWords.size() - 1; index >= 0; index--)
+		{
+			if(tweetedWords.get(index).trim().length() == 0)
+			{
+				tweetedWords.remove(index);
+			}
+		}
+	}
+	
 	private String [] createIgnoredWordArray()
 	{
 		String [] boringWords;
@@ -227,4 +238,11 @@ public class ChatTwitter
 		return mostCommon;
 	}
 
+	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
+	{
+		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String, Integer>>(wordsAndCount.entrySet());
+		entries.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+		
+		return entries;
+	}
 }
